@@ -1,0 +1,64 @@
+CREATE DATABASE Escola
+
+USE Escola;
+CREATE TABLE Alunos (
+ 	 
+  	ID int auto_increment primary key,
+ 	NOME varchar(100) not null,
+	EMAIL varchar(100) unique not null,
+	DATA_NASCIMENTO date not null,
+	CURSO varchar(100) not null,
+	NOTA float
+);
+
+USE Escola;
+INSERT INTO Alunos (nome, email, data_nascimento, curso, nota)
+VALUES ('João Silva', 'joao@email.com', '2000-05-15', 'Engenharia', '8.5');
+
+USE Escola;
+INSERT INTO Alunos (nome, email, data_nascimento, curso, nota)
+VALUES ('Maria Souza', 'maria@email.com', '1998-09-22', 'Medicina', '9.2');
+
+USE Escola;
+INSERT INTO Alunos (nome, email, data_nascimento, curso, nota)
+VALUES ('Carlos Pereira', 'carlos@email.com', '2001-03-10', 'Direito', '7.8');
+
+USE Escola;
+INSERT INTO Alunos (nome, email, data_nascimento, curso, nota)
+VALUES ('Ana Oliveira', 'ana@email.com', '1999-07-19', 'Engenharia', '6.9');
+
+USE Escola;
+SELECT * FROM Alunos;
+
+USE Escola;
+SELECT * FROM Alunos WHERE id = 1;
+
+USE Escola;
+UPDATE Alunos
+SET curso = 'Cência da Computação', nota = 9.0 WHERE id = 1;
+
+USE Escola;
+SELECT COUNT(*) AS total_alunos FROM Alunos;
+
+USE Escola;
+SELECT SUM(nota) AS soma_notas FROM Alunos;
+
+USE Escola;
+SELECT AVG(nota) AS media_notas FROM Alunos;
+
+USE Escola;
+SELECT MAX(nota) AS nota_maxima FROM Alunos;
+
+USE Escola;
+SELECT MIN(nota) AS nota_minima FROM Alunos;
+
+USE Escola;
+DELETE FROM Alunos WHERE id = 3;
+
+USE Escola;
+DELETE FROM Alunos;
+
+USE Escola;
+DROP TABLE Alunos;
+
+DROP DATABASE Escola;
