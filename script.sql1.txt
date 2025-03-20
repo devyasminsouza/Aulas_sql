@@ -1,0 +1,81 @@
+CREATE DATABASE Universidade;
+
+USE Universidade;
+CREATE TABLE Estudantes(
+	id int AUTO_INCREMENT PRIMARY KEY,
+    nome varchar(100) UNIQUE NOT NULL,
+    curso varchar(100) NOT NULL,
+    idade date NOT NULL,
+    nota_final float 
+);
+
+USE universidade;
+
+INSERT INTO estudantes (nome, curso, idade, nota_final)
+VALUES ('Daniela Pacheco', 'Matemática', '1985-11-15', '9.4');
+
+USE universidade;
+
+INSERT INTO estudantes (nome, curso, idade, nota_final)
+VALUES ('Caio Lucas', 'Psicologia', '1999-05-20', '7.2');
+
+USE universidade;
+
+INSERT INTO estudantes (nome, curso, idade, nota_final)
+VALUES ('Paula Nunes', 'Direito', '2000-11-15', '9.6');
+
+USE universidade;
+
+INSERT INTO estudantes (nome, curso, idade, nota_final)
+VALUES ('Giovane Silva', 'Medicina', '1994-07-11', '8.1');
+
+SE universidade;
+
+INSERT INTO estudantes (nome, curso, idade, nota_final)
+VALUES ('Frederico Souza', 'Odontologia', '2005-10-11', '6.8');
+
+USE universidade;
+
+INSERT INTO estudantes (nome, curso, idade, nota_final)
+VALUES ('Nahy Bicalho', 'Engenharia', '1990-02-09', '4.1');
+
+USE universidade;
+
+SELECT * FROM Estudantes WHERE curso = 'Engenharia';
+
+USE universidade;
+
+UPDATE Estudantes
+SET nota = 7.3 WHERE id = 6;
+
+USE universidade;
+
+DELETE FROM Estudantes WHERE id = 4;
+
+USE universidade;
+
+SELECT COUNT(*) AS total_estudantes FROM estudantes;
+
+USE universidade;
+
+SELECT AVG(nota_final) AS media_notas FROM estudantes;
+
+USE universidade;
+
+SELECT CURSO FROM estudantes;
+
+USE universidade;
+
+SELECT MAX(nota_final) AS nota_maxima FROM estudantes;
+
+USE universidade;
+
+SELECT MIN(nota_final) AS nota_minima FROM estudantes;
+
+USE Universidade;
+DELETE FROM estudantes;
+
+USE Universidade;
+DROP TABLE estudantes;
+
+DROP DATABASE Universidade;
